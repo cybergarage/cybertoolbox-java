@@ -1,0 +1,483 @@
+#VRML V2.0 utf8
+DEF earth Transform {
+	translation 0.0 0.0 0.0
+	rotation 0.0 1.0 0.0 4.9
+	scale 1.0 1.0 1.0
+	scaleOrientation 0.0 0.0 1.0 0.0
+	center 0.0 0.0 0.0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0.8 0.8
+					ambientIntensity 0.2
+					specularColor 0.0 0.0 0.0
+					emissiveColor 0.0 0.0 0.0
+					shininess 0.2
+					transparency 0.0
+				}
+				texture ImageTexture {
+					repeatS TRUE
+					repeatT TRUE
+					url [
+						"earth.jpg"
+					]
+				}
+			}
+			geometry Sphere {
+				radius 5.0
+			}
+		}
+	]
+}
+DEF moon Transform {
+	translation -1.7868098 0.0 -5.7277665
+	rotation 0.0 0.0 1.0 0.0
+	scale 1.0 1.0 1.0
+	scaleOrientation 0.0 0.0 1.0 0.0
+	center 0.0 0.0 0.0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0.8 0.8
+					ambientIntensity 0.2
+					specularColor 0.0 0.0 0.0
+					emissiveColor 0.0 0.0 0.0
+					shininess 0.2
+					transparency 0.0
+				}
+			}
+			geometry Sphere {
+				radius 1.0
+			}
+		}
+	]
+}
+Viewpoint {
+	fieldOfView 0.785398
+	jump TRUE
+	position 0.0 0.0 20.848566
+	orientation 0.0 0.0 1.0 0.0
+	description ""
+}
+NavigationInfo {
+	visibilityLimit 0.0
+	headlight TRUE
+	speed 1.0
+	type [
+	]
+	avatarSize [
+	]
+}
+Background {
+	groundColor [
+	]
+	skyColor [
+		0.0 0.0 0.0
+	]
+	groundAngle [
+	]
+	skyAngle [
+	]
+	frontUrl [
+	]
+	backUrl [
+	]
+	leftUrl [
+	]
+	rightUrl [
+	]
+	topUrl [
+	]
+	bottomUrl [
+	]
+}
+PointLight {
+	on TRUE
+	intensity 1.0
+	ambientIntensity 0.0
+	color 1.0 1.0 1.0
+	location 0.0 0.0 100.0
+	radius 100.0
+	attenuation 1.0 0.0 0.0
+}
+DEF WORLD_ROOT_NODE Group {
+	children [
+		DEF WORLD_GLOBAL_DATA_ROOT_NODE Group {
+		}
+		DEF WORLD_DIAGRAM_ROOT_NODE Group {
+			children [
+				DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth Transform {
+					translation 92.0 53.0 0.0
+					rotation 0.0 0.0 1.0 0.0
+					scale 501.0 192.0 1.0
+					scaleOrientation 0.0 0.0 1.0 0.0
+					center 0.0 0.0 0.0
+					children [
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE1 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"SystemFrame.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventOut SFString frame
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "System"
+							field SFString SYSTEM_FIELD_MODULE_NAME "FRAME"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 0
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 0
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE2 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"StringConstant.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Direction"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 96
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 32
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0,1,0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE3 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"StringMerge2Values.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString value1
+							eventIn SFString value2
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Merge2Values"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 160
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE4 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"FilterScale.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Filter"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Scale"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 96
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 96
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0.1"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE5 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"ObjectSetRotation.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Object"
+							field SFString SYSTEM_FIELD_MODULE_NAME "SetRotation"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 224
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+							field SFNode SYSTEM_FIELD_MODULE_TARGET_NODE USE earth
+						}
+					]
+				}
+				DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition Transform {
+					translation 72.0 248.0 0.0
+					rotation 0.0 0.0 1.0 0.0
+					scale 553.0 175.0 1.0
+					scaleOrientation 0.0 0.0 1.0 0.0
+					center 0.0 0.0 0.0
+					children [
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE1 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"SystemFrame.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventOut SFString frame
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "System"
+							field SFString SYSTEM_FIELD_MODULE_NAME "FRAME"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 0
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 0
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE2 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"StringConstant.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Value"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 264
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE3 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"StringMerge3Values.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString value1
+							eventIn SFString value2
+							eventIn SFString value3
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Merge3Values"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 384
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE4 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"ObjectSetLocation.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Object"
+							field SFString SYSTEM_FIELD_MODULE_NAME "SetLocation"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 448
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+							field SFNode SYSTEM_FIELD_MODULE_TARGET_NODE USE moon
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE5 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"MathSin.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Math"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Sin"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 160
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 96
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE6 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"MathCos.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Math"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Cos"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 160
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 32
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE7 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"FilterScale.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Filter"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Scale"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 96
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0.09"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE8 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"FilterScale.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Filter"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Scale"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 224
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 32
+							field SFString SYSTEM_FIELD_MODULE_VALUE "6"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE9 Script {
+							directOutput TRUE
+							mustEvaluate TRUE
+							url [
+								"FilterScale.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFTime SYSTEM_EVENTIN_Timer_TimeSensor_cycleTime
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString inValue
+							eventOut SFString outValue
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Filter"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Scale"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 224
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 96
+							field SFString SYSTEM_FIELD_MODULE_VALUE "6"
+						}
+					]
+				}
+			]
+		}
+		DEF WORLD_SUBEVENT_ROOT_NODE Group {
+			children [
+				DEF WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE Script {
+					directOutput TRUE
+					mustEvaluate FALSE
+					url [
+						"SystemStart.class"
+					]
+					eventIn SFTime EVENT_START_TIME
+					eventOut SFBool EVENT_START_ENABLED
+				}
+			]
+		}
+		DEF WORLD_EVENT_ROOT_NODE Group {
+			children [
+				DEF WORLD_EVENT_SYSTEM_Start_NONE_THIS TimeSensor {
+					cycleInterval 0.1
+					enabled TRUE
+					loop TRUE
+					startTime 0.0
+					stopTime -1.0
+				}
+				DEF WORLD_EVENT_SYSTEM_Frame_NONE_THIS TimeSensor {
+					cycleInterval 0.1
+					enabled TRUE
+					loop TRUE
+					startTime 0.0
+					stopTime -1.0
+				}
+			]
+		}
+	]
+}
+ROUTE WORLD_EVENT_SYSTEM_Start_NONE_THIS.time TO WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE.EVENT_START_TIME
+ROUTE WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE.EVENT_START_ENABLED TO WORLD_EVENT_SYSTEM_Start_NONE_THIS.enabled
+ROUTE WORLD_EVENT_SYSTEM_Frame_NONE_THIS.time TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE1.SYSTEM_EVENTIN_Frame_TimeSensor_time
+ROUTE WORLD_EVENT_SYSTEM_Frame_NONE_THIS.time TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE2.SYSTEM_EVENTIN_Frame_TimeSensor_time
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE2.value TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE3.value1
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE1.frame TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE4.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE4.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE3.value2
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE3.value TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_rotateEarth_MODULE5.value
+ROUTE WORLD_EVENT_SYSTEM_Frame_NONE_THIS.time TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE1.SYSTEM_EVENTIN_Frame_TimeSensor_time
+ROUTE WORLD_EVENT_SYSTEM_Frame_NONE_THIS.time TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE2.SYSTEM_EVENTIN_Frame_TimeSensor_time
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE3.value TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE4.value
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE2.value TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE3.value2
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE1.frame TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE7.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE7.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE5.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE7.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE6.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE5.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE9.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE6.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE8.inValue
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE9.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE3.value3
+ROUTE WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE8.outValue TO WORLD_DIAGRAM_SYSTEM_Frame_NONE_THIS_setMoonPosition_MODULE3.value1

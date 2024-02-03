@@ -1,0 +1,89 @@
+/******************************************************************
+*
+*	VRML Library for Java
+*
+*	Copyright (C) Satoshi Konno 1997-1998
+*
+*	File : MFFloat.java
+*
+******************************************************************/
+
+package vrml.field;
+
+import java.io.PrintWriter;
+import vrml.*;
+
+public class MFFloat extends MField {
+
+	public MFFloat() {
+		setType(fieldTypeMFFloat);
+	}
+
+	public MFFloat(MFFloat values) {
+		setType(fieldTypeMFFloat);
+		copy(values);
+	}
+
+	public MFFloat(ConstMFFloat values) {
+		setType(fieldTypeMFFloat);
+		copy(values);
+	}
+
+	public void addValue(float value) {
+		SFFloat sfvalue = new SFFloat(value);
+		add(sfvalue);
+	}
+
+	public void addValue(String value) {
+		SFFloat sfvalue = new SFFloat(value);
+		add(sfvalue);
+	}
+	
+	public void addValue(SFFloat sfvalue) {
+		add(sfvalue);
+	}
+
+	public void insertValue(int index, String value) {
+		SFFloat sfvalue = new SFFloat(value);
+		insert(index, sfvalue);
+	}
+	
+	public void insertValue(int index, float value) {
+		SFFloat sfvalue = new SFFloat(value);
+		insert(index, sfvalue);
+	}
+
+	public float get1Value(int index) {
+		SFFloat sfvalue = (SFFloat)getField(index);
+		if (sfvalue != null)
+			return sfvalue.getValue();
+		return 0.0f;		
+	}
+
+	public void set1Value(int index, float value) {
+		SFFloat sfvalue = (SFFloat)getField(index);
+		if (sfvalue != null)
+			sfvalue.setValue(value);
+	}
+
+	////////////////////////////////////////////////
+	//	Output
+	////////////////////////////////////////////////
+
+	public void outputContext(PrintWriter printStream, String indentString) {
+		for (int n=0; n<getSize(); n++) {
+			if (n < getSize()-1)
+				printStream.println(indentString + get1Value(n) + ",");
+			else	
+				printStream.println(indentString + get1Value(n));
+		}
+	}
+
+	////////////////////////////////////////////////
+	//	toString
+	////////////////////////////////////////////////
+
+	public String toString() {
+		return null;
+	}
+}

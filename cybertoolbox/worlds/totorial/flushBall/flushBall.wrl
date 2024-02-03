@@ -1,0 +1,250 @@
+#VRML V2.0 utf8
+DEF ball Transform {
+	translation 0.0 0.0 0.0
+	rotation 0.0 0.0 1.0 0.0
+	scale 1.0 1.0 1.0
+	scaleOrientation 0.0 0.0 1.0 0.0
+	center 0.0 0.0 0.0
+	children [
+		Shape {
+			appearance Appearance {
+				material DEF ballColor Material {
+					diffuseColor 1.0 0.0 0.0
+					ambientIntensity 0.2
+					specularColor 0.0 0.0 0.0
+					emissiveColor 0.0 0.0 0.0
+					shininess 0.2
+					transparency 0.0
+				}
+			}
+			geometry Sphere {
+				radius 1.0
+			}
+		}
+		DEF WORLD_EVENT_USER_Pickup_ball_TouchSensor_SOURCE TouchSensor {
+			enabled TRUE
+		}
+		DEF WORLD_EVENT_USER_Pickup_ball_TouchSensor_SOURCE TouchSensor {
+			enabled TRUE
+		}
+	]
+}
+DEF WORLD_ROOT_NODE Group {
+	children [
+		DEF WORLD_GLOBAL_DATA_ROOT_NODE Group {
+		}
+		DEF WORLD_DIAGRAM_ROOT_NODE Group {
+			children [
+				DEF WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor Transform {
+					translation 0.0 0.0 0.0
+					rotation 0.0 0.0 1.0 0.0
+					scale 320.0 240.0 0.0
+					scaleOrientation 0.0 0.0 1.0 0.0
+					center 0.0 0.0 0.0
+					children [
+						DEF WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor_MODULE1 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"StringConstant.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Color"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 32
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "1.0,0.0,0.0"
+						}
+						DEF WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor_MODULE2 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"MaterialSetDiffuseColor.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Material"
+							field SFString SYSTEM_FIELD_MODULE_NAME "SetDiffuseColor"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 256
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+							field SFNode SYSTEM_FIELD_MODULE_TARGET_NODE USE ballColor
+						}
+					]
+				}
+				DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor Transform {
+					translation 311.0 385.0 0.0
+					rotation 0.0 0.0 1.0 0.0
+					scale 320.0 240.0 0.0
+					scaleOrientation 0.0 0.0 1.0 0.0
+					center 0.0 0.0 0.0
+					children [
+						DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE0 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"SystemPickup.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventOut SFString button
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "System"
+							field SFString SYSTEM_FIELD_MODULE_NAME "PICKUP"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 0
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 0
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE1 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"StringConstant.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Color"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 72
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 96
+							field SFString SYSTEM_FIELD_MODULE_VALUE "1.0,0.0,0.0"
+						}
+						DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE2 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"StringConstant.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Color"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 72
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 32
+							field SFString SYSTEM_FIELD_MODULE_VALUE "1.0,1.0,0.0"
+						}
+						DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE3 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"StringSelector.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString value1
+							eventIn SFString value2
+							eventOut SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "String"
+							field SFString SYSTEM_FIELD_MODULE_NAME "Selector"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 192
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+						}
+						DEF WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE4 Script {
+							directOutput TRUE
+							mustEvaluate FALSE
+							url [
+								"MaterialSetDiffuseColor.class"
+							]
+							eventIn SFTime SYSTEM_EVENTIN_Start_TimeSensor_time
+							eventIn SFTime SYSTEM_EVENTIN_Frame_TimeSensor_cycleTime
+							eventIn SFTime SYSTEM_EVENTIN_Clock_TimeSensor_cycleTime
+							eventIn SFBool SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+							eventIn SFBool SYSTEM_EVENTIN_Area_ProximitySensor_isActive
+							eventIn SFVec3f SYSTEM_EVENTIN_Drag_PlaneSensor_translation_changed
+							eventIn SFBool SYSTEM_EVENTIN_Timer_TimeSensor_isActive
+							eventIn SFString SYSTEM_EVENTIN_MODULE_EXECUTION
+							eventIn SFString value
+							field SFString SYSTEM_FIELD_MODULE_CLASSNAME "Material"
+							field SFString SYSTEM_FIELD_MODULE_NAME "SetDiffuseColor"
+							field SFInt32 SYSTEM_FIELD_MODULE_XPOS 288
+							field SFInt32 SYSTEM_FIELD_MODULE_YPOS 64
+							field SFString SYSTEM_FIELD_MODULE_VALUE "0"
+							field SFNode SYSTEM_FIELD_MODULE_TARGET_NODE USE ballColor
+						}
+					]
+				}
+			]
+		}
+		DEF WORLD_SUBEVENT_ROOT_NODE Group {
+			children [
+				DEF WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE Script {
+					directOutput TRUE
+					mustEvaluate FALSE
+					url [
+						"SystemStart.class"
+					]
+					eventIn SFTime EVENT_START_TIME
+					eventOut SFBool EVENT_START_ENABLED
+				}
+			]
+		}
+		DEF WORLD_EVENT_ROOT_NODE Group {
+			children [
+				DEF WORLD_EVENT_SYSTEM_Start_NONE_THIS TimeSensor {
+					cycleInterval 0.1
+					enabled TRUE
+					loop TRUE
+					startTime 0.0
+					stopTime -1.0
+				}
+				DEF WORLD_EVENT_SYSTEM_Frame_NONE_THIS TimeSensor {
+					cycleInterval 0.1
+					enabled TRUE
+					loop TRUE
+					startTime 0.0
+					stopTime -1.0
+				}
+				DEF WORLD_EVENT_USER_Pickup_ball_TouchSensor Group {
+				}
+			]
+		}
+	]
+}
+ROUTE WORLD_EVENT_SYSTEM_Start_NONE_THIS.time TO WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE.EVENT_START_TIME
+ROUTE WORLD_EVENT_SYSTEM_Start_NONE_THIS_SOURCE.EVENT_START_ENABLED TO WORLD_EVENT_SYSTEM_Start_NONE_THIS.enabled
+ROUTE WORLD_EVENT_SYSTEM_Start_NONE_THIS.time TO WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor_MODULE1.SYSTEM_EVENTIN_Start_TimeSensor_time
+ROUTE WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor_MODULE1.value TO WORLD_DIAGRAM_SYSTEM_Start_NONE_THIS_setColor_MODULE2.value
+ROUTE WORLD_EVENT_USER_Pickup_ball_TouchSensor_SOURCE.isActive TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE0.SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+ROUTE WORLD_EVENT_USER_Pickup_ball_TouchSensor_SOURCE.isActive TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE1.SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+ROUTE WORLD_EVENT_USER_Pickup_ball_TouchSensor_SOURCE.isActive TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE2.SYSTEM_EVENTIN_Pickup_TouchSensor_isActive
+ROUTE WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE0.button TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE3.SYSTEM_EVENTIN_MODULE_EXECUTION
+ROUTE WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE3.value TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE4.value
+ROUTE WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE2.value TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE3.value1
+ROUTE WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE1.value TO WORLD_DIAGRAM_USER_Pickup_ball_TouchSensor_chageColor_MODULE3.value2
